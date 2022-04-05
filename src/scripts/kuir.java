@@ -17,5 +17,14 @@ public class kuir {
 			indexer indexe = new indexer(path);
 			indexe.indexerXml();
 		}
+		else if(command.equals("-s")) {
+			if(args[2].equals("-q")) {
+				String query = args[3];
+			searcher search = new searcher(path,query);
+			search.calcsim();
+			}
+			else System.out.println("input query");
+			
+		}
 	}
 	}
