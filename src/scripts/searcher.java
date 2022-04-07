@@ -31,7 +31,7 @@ public class searcher {
 		
 	}
 
-	public void calcsim() throws Exception {
+	public void calcsim22() throws Exception {
 		
 		File file1 = new File(input_file); //index.post 읽어오기
 		File file2 = new File("./collection.xml"); //collection.xml 읽어오기
@@ -54,7 +54,9 @@ public class searcher {
 		
 		Iterator<String> it = hashQuery.keySet().iterator();  // 질의(query)를 읽기 위한 객체 생성
 		
+
 		int i=0,j,k;
+
 		double Q_id0=0; // 유사도
 		double Q_id1=0; // 유사도
 		double Q_id2=0; // 유사도
@@ -94,6 +96,7 @@ public class searcher {
 			System.out.println("검색된 문서가 없습니다");
 		}
 		
+
 		double a,b0,b1,b2,b3,b4;        //분모 값을 넣어줄 변수 생성후 초기화
 		a=0;
 		b0=0;
@@ -127,6 +130,7 @@ public class searcher {
 		double cosSim4 = denom4==0 ? 0 :Q_id4 / denom4;
 		
 	
+
 		DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
 		org.w3c.dom.Document document = docBuilder.parse(file2);
@@ -143,11 +147,14 @@ public class searcher {
 		}
 		
 		HashMap<String,Double> map= new HashMap();
+
 		map.put(titles[0], cosSim0);   
 		map.put(titles[1], cosSim1);   
 		map.put(titles[2], cosSim2);   
 		map.put(titles[3], cosSim3);   
 		map.put(titles[4], cosSim4);   
+
+
 		
 		
 		List<String> keySet = new ArrayList<>(map.keySet());
@@ -178,5 +185,5 @@ public class searcher {
 		
 
 
-	
-}
+	}
+
