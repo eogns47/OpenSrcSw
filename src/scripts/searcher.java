@@ -31,14 +31,11 @@ public class searcher {
 		
 	}
 
-<<<<<<< HEAD
-	public void calcsim22() throws Exception {
-=======
-	public void InnerProduct() throws Exception {
->>>>>>> feature
+	public void calcsim() throws Exception {
 		
 		File file1 = new File(input_file); //index.post 읽어오기
 		File file2 = new File("./collection.xml"); //collection.xml 읽어오기
+		
 		
 		HashMap hashQuery =new HashMap();  //Query의 해쉬맵 생성
 	
@@ -151,7 +148,6 @@ public class searcher {
 		}
 		
 		HashMap<String,Double> map= new HashMap();
-<<<<<<< HEAD
 
 		map.put(titles[0], cosSim0);   
 		map.put(titles[1], cosSim1);   
@@ -160,13 +156,6 @@ public class searcher {
 		map.put(titles[4], cosSim4);   
 
 
-=======
-		map.put(titles[0], Q_id0);   
-		map.put(titles[1], Q_id1);   
-		map.put(titles[2], Q_id2);   
-		map.put(titles[3], Q_id3);   
-		map.put(titles[4], Q_id4);   
->>>>>>> feature
 		
 		
 		List<String> keySet = new ArrayList<>(map.keySet());
