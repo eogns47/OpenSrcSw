@@ -30,18 +30,14 @@ public class searcher {
 		this.query=query;
 		
 	}
-<<<<<<< HEAD
 	
 	public void InnerProduct() throws Exception {
 		
 	}
 	
 	public void calcsim() throws Exception {
-		InnerProduct Q_id = new InnerProduct();
 		
-=======
-	public void InnerProduct() throws Exception {	
->>>>>>> feature
+		
 		File file1 = new File(input_file); //index.post 읽어오기
 		File file2 = new File("./collection.xml"); //collection.xml 읽어오기
 		
@@ -106,7 +102,6 @@ public class searcher {
 			System.out.println("검색된 문서가 없습니다");
 		}
 		
-<<<<<<< HEAD
 
 		double a,b0,b1,b2,b3,b4;        //분모 값을 넣어줄 변수 생성후 초기화
 		a=0;
@@ -142,8 +137,6 @@ public class searcher {
 		
 	
 
-=======
->>>>>>> feature
 		DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
 		org.w3c.dom.Document document = docBuilder.parse(file2);
@@ -155,7 +148,7 @@ public class searcher {
 		for (int temp = 0; temp < nList.getLength(); temp++) {
 			Node nNode = nList.item(temp);
 			Element eElement = (Element) nNode;
-			String titleData=eElement.getElementsByTagName("title").item(0).getTextContent();  // title 을 가져와서 titleData에 넣기
+			String titleData=eElement.getElementsByTagName("title").item(0).getTextContent();
 			titles[temp]=titleData;
 		}
 		
