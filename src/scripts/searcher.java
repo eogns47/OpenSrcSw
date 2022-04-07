@@ -30,9 +30,7 @@ public class searcher {
 		this.query=query;
 		
 	}
-
-	public void InnerProduct() throws Exception {
-		
+	public void InnerProduct() throws Exception {	
 		File file1 = new File(input_file); //index.post 읽어오기
 		File file2 = new File("./collection.xml"); //collection.xml 읽어오기
 		
@@ -94,8 +92,6 @@ public class searcher {
 			System.out.println("검색된 문서가 없습니다");
 		}
 		
-
-		
 		DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
 		org.w3c.dom.Document document = docBuilder.parse(file2);
@@ -107,7 +103,7 @@ public class searcher {
 		for (int temp = 0; temp < nList.getLength(); temp++) {
 			Node nNode = nList.item(temp);
 			Element eElement = (Element) nNode;
-			String titleData=eElement.getElementsByTagName("title").item(0).getTextContent();
+			String titleData=eElement.getElementsByTagName("title").item(0).getTextContent();  // title 을 가져와서 titleData에 넣기
 			titles[temp]=titleData;
 		}
 		
