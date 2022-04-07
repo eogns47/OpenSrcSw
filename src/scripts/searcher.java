@@ -31,7 +31,7 @@ public class searcher {
 		
 	}
 
-	public void calcsim() throws Exception {
+	public void InnerProduct() throws Exception {
 		
 		File file1 = new File(input_file); //index.post 읽어오기
 		File file2 = new File("./collection.xml"); //collection.xml 읽어오기
@@ -112,7 +112,7 @@ public class searcher {
 		}
 		
 		HashMap<String,Double> map= new HashMap();
-		map.put(titles[0]+"0", Q_id0);   
+		map.put(titles[0], Q_id0);   
 		map.put(titles[1], Q_id1);   
 		map.put(titles[2], Q_id2);   
 		map.put(titles[3], Q_id3);   
