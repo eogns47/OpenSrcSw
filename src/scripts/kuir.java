@@ -21,7 +21,7 @@ public class kuir {
 			if(args[2].equals("-q")) {
 				String query = args[3];
 			searcher search = new searcher(path,query);
-			search.calcsim22();
+			search.calcsim();
 			}
 			else System.out.println("input query");
 			
