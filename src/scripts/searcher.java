@@ -30,14 +30,13 @@ public class searcher {
 		this.query=query;
 		
 	}
+
 	
 	public void InnerProduct() throws Exception {
 		
 	}
 	
 	public void calcsim() throws Exception {
-		
-		
 		File file1 = new File(input_file); //index.post 읽어오기
 		File file2 = new File("./collection.xml"); //collection.xml 읽어오기
 		
