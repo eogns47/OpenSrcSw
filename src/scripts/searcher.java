@@ -37,7 +37,7 @@ public class searcher {
 	}
 	
 	public void calcsim() throws Exception {
-	
+
 	}
 
 			
