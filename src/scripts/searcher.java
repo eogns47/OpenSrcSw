@@ -57,7 +57,7 @@ public class searcher {
 		double Q_id1=0; // 유사도
 		double Q_id2=0; // 유사도
 		double Q_id3=0; // 유사도
-		double Q_id4=0; // 유사도
+		double Q_id4=0; // 유사도입니다.
 		String tfidf1[]=new String[kl.size()];
 		String tfidf2[]=new String[kl.size()];
 		String tfidf3[]=new String[kl.size()];
