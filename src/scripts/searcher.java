@@ -37,6 +37,7 @@ public class searcher {
 	double AQ_id2;
 	double AQ_id3;
 	double AQ_id4;
+	int size=0;
 	public searcher(String file,String query) throws Exception {
 		this.input_file = file;
 		this.query=query;
@@ -54,8 +55,9 @@ public class searcher {
 		KeywordList kl = ke.extractKeyword(query, true);
 		for( int k=0; k<kl.size(); k++) {
 			Keyword kwrd = kl.get(k);
-			hashQuery.put(kwrd.getString(), kwrd.getCnt());    //Query의 형태소 분석 후 해쉬맵에 넣기.
+			hashQuery.put(kwrd.getString(), kwrd.getCnt());  
 		}
+		
 		Akl=kl;
 		FileInputStream fileStream = new FileInputStream(input_file);
 		ObjectInputStream objectInputStream = new ObjectInputStream(fileStream);
@@ -80,23 +82,31 @@ public class searcher {
 		String tfidf4[]=new String[kl.size()];
 		String tfidf0[]=new String[kl.size()];
 		String tfidf[]=new String[kl.size()];
-		try {
+		
 		while (it.hasNext()) {
 			String key = it.next();
 			String value = String.valueOf( hashmap2.get(key));
 			String value2 = String.valueOf( hashQuery.get(key)); // query의 가중치
-			String split[]=value.split("\\s");
-			tfidf0[i]=(split[2]); //한 단어에 대해 각각의 문서의 가중치를 배열에 넣어준다.
-			tfidf1[i]=(split[4]);  
-			tfidf2[i]=(split[6]);  
-			tfidf3[i]=(split[8]); 
-			tfidf4[i]=(split[10]); 
-			tfidf[i]=value2;		           		
-			i++;
-			}
+			
+			
+				if(value=="null") {
+				System.out.println(key+"는 검색된 문서가 없습니다");
+				}
+				else{String split[]=value.split("\\s");
+				tfidf0[i]=(split[2]); //한 단어에 대해 각각의 문서의 가중치를 배열에 넣어준다.
+				tfidf1[i]=(split[4]);  
+				tfidf2[i]=(split[6]);  
+				tfidf3[i]=(split[8]); 
+				tfidf4[i]=(split[10]); 
+				tfidf[i]=value2;		           		
+				i++; size++;
+				}
+			
+			
+		}
 		
 		
-		for(i=0; i<kl.size();i++) {
+		for(i=0; i<size;i++) {
 			Q_id0+=Double.parseDouble(tfidf[i])*Double.parseDouble(tfidf0[i]); //유사도는 query의 한 단어의 가중치 * 문서의 한 단어의 가중치
 			Q_id1+=Double.parseDouble(tfidf[i])*Double.parseDouble(tfidf1[i]);
 			Q_id2+=Double.parseDouble(tfidf[i])*Double.parseDouble(tfidf2[i]);
@@ -104,9 +114,7 @@ public class searcher {
 			Q_id4+=Double.parseDouble(tfidf[i])*Double.parseDouble(tfidf4[i]);
 			
 		}
-		}catch(ArrayIndexOutOfBoundsException e) {
-			System.out.println("검색된 문서가 없습니다");
-		} 
+		
 		Atfidf=new String[kl.size()];   //배열 크기지정
 		Atfidf0=new String[kl.size()];  
 		Atfidf1=new String[kl.size()];
