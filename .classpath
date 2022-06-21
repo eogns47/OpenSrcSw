@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="week 15- api/src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17">
 		<attributes>
 			<attribute name="module" value="true"/>
@@ -8,5 +9,6 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/user/simpleIR2/OpenSW2/Opensw2/jar/kkma-2.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/user/simpleIR2/OpenSW2/Opensw2/jar/jsoup-1.14.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/opensrcsw/python programming/jar/json-simple-1.1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
